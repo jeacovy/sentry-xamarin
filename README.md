@@ -46,10 +46,10 @@ Additionaly, Android and IOS will include additional information:
 </p>
 
 ## Setup
-All you need to do is to initialize Xamarin integration by calling SentryXamarin.Init, and, it's recommended to start Sentry Xamarin SDK as early as possible, for an example, the start of OnCreate on MainActivity for Android, and, the top of FinishedLaunching on AppDelegate for iOS)
+All you need to do is to initialize Xamarin integration by calling SentrySDK.Init, and, it's recommended to start Sentry Xamarin SDK as early as possible, for an example, the start of OnCreate on MainActivity for Android, and, the top of FinishedLaunching on AppDelegate for iOS)
 
 ```C#
-SentryXamarin.Init(options =>
+SentrySDK.Init(options =>
 {
     options.Dsn = "__YOUR__DSN__";
     options.AddXamarinFormsIntegration();
@@ -66,7 +66,7 @@ public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompa
 {
     protected override void OnCreate(Bundle savedInstanceState)
     {
-        SentryXamarin.Init(options =>
+        SentrySDK.Init(options =>
         {
             options.Dsn = "__YOUR__DSN__";
             options.AddXamarinFormsIntegration();
@@ -81,7 +81,7 @@ public partial class AppDelegate : global::Xamarin.Forms.Platform.iOS.FormsAppli
 {
     public override bool FinishedLaunching(UIApplication app, NSDictionary options)
     {
-        SentryXamarin.Init(options =>
+        SentrySDK.Init(options =>
         {
             options.Dsn = "__YOUR__DSN__";
             options.AddXamarinFormsIntegration();
@@ -96,7 +96,7 @@ sealed partial class App : Application
 {
     protected override void OnLaunched(LaunchActivatedEventArgs e)
     {
-        SentryXamarin.Init(options =>
+        SentrySDK.Init(options =>
         {
             options.Dsn = "__YOUR__DSN__";
             options.AddXamarinFormsIntegration();
